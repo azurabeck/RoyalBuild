@@ -1,0 +1,29 @@
+body {
+    background-color: #202334;
+    font-family: Roboto;
+    font-style: normal;
+    margin: 0 auto;
+}
+
+// BUTTONS 
+
+.btn-green {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 20px;
+    color: #fff;
+    background: #60A810;
+    border-radius: 4px;    
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 0.005em;
+}
+
+// BUTTONS HOVER
+
+.btn-green:hover {
+    cursor: pointer;
+    background-color: #497d10;
+}
