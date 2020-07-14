@@ -1,0 +1,10 @@
+@media screen and (min-width: 1280px) {
+    .bg-img {
+        top: 65px;
+        height: 50vh;
+    }
+    .cat-btn {
+        height: 60px;
+        top: calc(48vh + 65px);
+    }
+}

@@ -1,5 +1,12 @@
 @import './global';
+@import './global-resp';
 
 // MOBILE IMPORTS
 @import './mobile/navbar.scss';
 @import './mobile/home.scss';
+
+
+
+// WEB IMPORTS
+@import './web/navbar.scss';
+@import './web/home.scss';

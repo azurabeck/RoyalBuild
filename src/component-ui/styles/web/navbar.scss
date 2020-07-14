@@ -1,0 +1,15 @@
+@media screen and (min-width: 1280px) {
+    .navbar {
+        width: calc(100% - 48px);
+        height: 65px;
+        padding: 0 24px;
+
+        .nav-logo { height: 70%; }
+        .nav-btn { 
+            .btn-green { font-size: 14px; letter-spacing: 0.09em; }
+            svg { font-size: 28px !important; margin-left: 15px; }
+         }
+    }
+}
+
+

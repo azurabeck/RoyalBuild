@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LogoMob from '../images/logo-mob.png'
+import LogoMob from '../images/logo-mob.svg'
 
 import SignIn from './buttonGreen'
 import { Search , Menu } from '@material-ui/icons';
