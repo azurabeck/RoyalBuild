@@ -30,8 +30,7 @@
         align-items: center;
         justify-content: center;
 
-        input[type="checkbox"] { display: none; }
-        input:checked + .input-label svg { fill: #FF8A00; } 
+        input[type="checkbox"] { display: none }
 
      }
 }
