@@ -1,0 +1,18 @@
+@media screen and (min-width: 1280px) {
+ 
+    .pop-list {                
+        ul {
+            max-width: 300px;    
+            a > li, li { 
+                font-size: 14px;
+                .sub-pop {  a { font-size: 13px; }  }
+                img { height: 50px; }
+            }
+            .pop-auth {    
+                span { font-size: 12px; }
+                a { font-size: 16px; }
+            }
+        }
+    }
+    
+}
