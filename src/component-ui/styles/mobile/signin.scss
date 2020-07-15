@@ -1,0 +1,52 @@
+.signin-list {
+    padding: 20px;
+    color: #FF8A00;
+    text-align: center;
+
+    img { height: 30px }
+    .title {
+        margin-bottom: 50px;
+        font-family: 'Philosopher', sans-serif;
+        text-transform: uppercase;
+        color: #733E00;
+        font-size: 12px;
+
+
+    }
+    .entering-btn {
+
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+
+        .forget {
+            float: left;
+            width: 100%;
+            text-align: left;
+            font-size: 11px;
+            color: #4F4949;
+        }
+        .btn-green { 
+            float: right;
+            height: 30px;
+            font-size: 11px;
+        }
+        
+    }
+
+    .create-text {
+
+        margin-top: 100px;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            margin-top: 170px;
+            color: #923030;
+            font-size: 10px;
+            letter-spacing: 0.09em;
+
+            svg { transform: rotate(90deg); }
+        }
+    }
+}

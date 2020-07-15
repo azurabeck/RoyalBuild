@@ -4,6 +4,9 @@ import { Switch, withRouter, Route } from "react-router-dom"
 import Navbar from './component-ui/global/navbar'
 
 import Home from './component-pages/home'
+import SignIn from './component-pages/signin'
+import SignUp from './component-pages/signup'
+
 
 function App() {
   return (
@@ -11,7 +14,9 @@ function App() {
         <Navbar/>
         <Switch>
 
-          <Route exact path='/' component={Home}></Route>
+           <Route exact path='/' component={Home}></Route>
+           <Route path='/signin' component={SignIn}></Route>
+           <Route path='/signup' component={SignUp}></Route>
 
         </Switch>
     </div>

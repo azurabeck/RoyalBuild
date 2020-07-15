@@ -18,23 +18,46 @@ body {
     font-weight: 500;
     font-size: 9px;
     letter-spacing: 0.005em;
+    text-decoration: none;
 }
-
+.nav-btn { color: #fff  }
 // BUTTONS HOVER
 .btn-green:hover {
     cursor: pointer;
     background-color: #497d10;
 }
+.nav-btn:hover { cursor: pointer; color: #FF8A00; }
 
 
-.menu {
+// FORMS
+
+input { 
+    width: 210px;
+    height: 28px;
+    background: #13151E;
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 0 5px;
+    margin: 4px 0;
+ }
+
+ input::placeholder {
+     color: #4F4949
+ }
+
+
+
+// GLOBAL ESTRUCTURE
+
+.pop {
     position: fixed;
     top: 0; right: 0; left: 0; bottom: 0;
     background-color: #202334cc;
     padding: 25px;    
-    z-index: 3;
+    z-index: 999;
     
-    .menu-content {
+    .pop-content {
         width: 100%;
         height: calc(100% - 90px);
         background-color: #1B1D27;
@@ -44,7 +67,7 @@ body {
         align-items: center;
         justify-content: center;
 
-        .menu-list {            
+        .pop-list {            
             padding: 25px;
             display: flex;
             justify-content: center;
@@ -67,7 +90,7 @@ body {
                     margin-bottom: 35px;
                     text-transform: uppercase;
 
-                    .sub-menu {
+                    .sub-pop {
                         margin-top: 21px;
                         text-align: left;
 
@@ -85,7 +108,7 @@ body {
                     }
                 }
 
-                .menu-auth {
+                .pop-auth {
                     margin-top: 70px;
                     margin-bottom: 0;
 
@@ -116,7 +139,7 @@ body {
 
     }
 
-    .close-menu {
+    .close-pop {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -128,7 +151,7 @@ body {
         color: white;
     }
 
-    .close-menu:hover {
+    .close-pop:hover {
         cursor: pointer;
         color: #923030;
     }

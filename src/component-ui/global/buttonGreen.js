@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class buttonGreen extends Component {
     render() {
-        return (
-            <div className='btn-green'> {this.props.text} </div>
-        );
+
+        const type = this.props.type
+        let button 
+
+        if(type === 'link') {
+            button = <Link className='btn-green' to={this.props.function}> {this.props.text} </Link>
+        } else {
+            button = <div className='btn-green' onClick={this.props.function}> {this.props.text} </div>
+        }
+
+        return button;
     }
 }
 

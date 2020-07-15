@@ -9,16 +9,16 @@ class menu extends Component {
     render() {
 
         return (
-            <div className='menu'>
-                <div className='menu-content'>
-                    <div className='menu-list'>
+            <div className='pop'>
+                <div className='pop-content'>
+                    <div className='pop-list'>
                        <ul>
                             <Link to='/'><li><img src={Logo} alt=''/></li></Link>
                             <Link to='/'><li>Events</li></Link>
                             <li>
                                 Championt Build
                                 
-                                <div className='sub-menu'>
+                                <div className='sub-pop'>
                                     <Link to='/'>Leo - </Link>
                                     <Link to='/'>Morgan - </Link>
                                     <Link to='/'>Stepan - </Link>
@@ -42,7 +42,7 @@ class menu extends Component {
                             <li>
                                 Discover Itens
                             
-                                <div className='sub-menu'>
+                                <div className='sub-pop'>
                                     <Link to='/'>Parchments - </Link>
                                     <Link to='/'>Runes - </Link>
                                     <Link to='/'>Wood Itens - </Link>
@@ -53,16 +53,16 @@ class menu extends Component {
                             <Link to='/'><li>Create your build</li></Link>
                             <Link to='/'><li>See your profile</li></Link>
 
-                            <li className='menu-auth'>
-                                <Link to='/'>Sign in</Link> 
+                            <li className='pop-auth' onClick={this.props.toClose}>
+                                <Link to='/signin'>Sign in</Link> 
                                 <span> or </span>
-                                <Link to='/'>Sign in</Link> 
+                                <Link to='/signup'>Sign up</Link> 
                             </li>
                         </ul>  
                     </div>
                    
                 </div>
-                <div className='close-menu' onClick={this.props.toClose}> 
+                <div className='close-pop' onClick={this.props.toClose}> 
                     <CallMerge/> 
                 </div>       
             </div>

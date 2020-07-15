@@ -8,13 +8,12 @@ import { Search , Menu } from '@material-ui/icons';
 class navbar extends Component {
 
     state = {
-        menu: false
+        menu: false ,
     }
 
     handleMenu = () => {
         this.setState({menu: true})
-    }
-    
+    }    
     closeMenu = () => {
         this.setState({menu: false})
     }
@@ -29,9 +28,9 @@ class navbar extends Component {
             <div className='navbar'>
                 <img className='nav-logo' src={LogoMob} alt=''/>
                 <div className='nav-btn'>
-                    <SignIn text='Sign in'/>
-                    <Search style={{ fontSize: 20 , color: '#fff' }} />
-                    <Menu style={{ fontSize: 20 , color: '#fff' }} onClick={this.handleMenu} />
+                    <SignIn text='Sign in' type='link' function='/signin'/>
+                    <Search style={{ fontSize: 20 }} />
+                    <Menu style={{ fontSize: 20 }} onClick={this.handleMenu} />
                     { menuState ? <ShowMenu toClose={this.closeMenu}/> : null }
                 </div>       
             </div>
