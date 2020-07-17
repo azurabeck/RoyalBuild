@@ -6,9 +6,11 @@ class buttonGreen extends Component {
 
         const type = this.props.type
         let button 
-
+        
         if(type === 'link') {
             button = <Link className='btn-green' to={this.props.function}> {this.props.text} </Link>
+        } else if (type === 'button') {
+            button = <button className='btn-green' type={this.props.buttonType} onClick={this.props.function}> {this.props.text} </button>
         } else {
             button = <div className='btn-green' onClick={this.props.function}> {this.props.text} </div>
         }

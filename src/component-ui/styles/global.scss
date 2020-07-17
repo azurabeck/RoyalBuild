@@ -31,7 +31,7 @@ body {
 
 // FORMS
 
-input { 
+input , select { 
     width: 210px;
     height: 28px;
     background: #13151E;
@@ -46,7 +46,7 @@ input {
      color: #4F4949
  }
 
-
+select { width: 100%; }
 
 // GLOBAL ESTRUCTURE
 

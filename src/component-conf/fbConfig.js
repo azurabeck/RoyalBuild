@@ -4,14 +4,14 @@ import 'firebase/auth'
 
 // Initialize Firebase
 const config = {
-    apiKey: "AIzaSyBh1eLNetSeDNUA8a8zg-ju01HYOJ-nJ7U",
-    authDomain: "scribe-43d64.firebaseapp.com",
-    databaseURL: "https://scribe-43d64.firebaseio.com",
-    projectId: "scribe-43d64",
-    storageBucket: "",
-    messagingSenderId: "63577782308",
-    appId: "1:63577782308:web:bc44b1cefc577cc2"
-};
+    apiKey: "AIzaSyAqk8qyRXDcY_9uPlBMSZAyRUQpumMS7v0",
+    authDomain: "royalbuild-c2917.firebaseapp.com",
+    databaseURL: "https://royalbuild-c2917.firebaseio.com",
+    projectId: "royalbuild-c2917",
+    storageBucket: "royalbuild-c2917.appspot.com",
+    messagingSenderId: "735136693110",
+    appId: "1:735136693110:web:f923fe3897f96194fe1857"
+  };
   
 firebase.initializeApp(config);
 firebase.firestore().settings({ timestampsInSnapshots: true})

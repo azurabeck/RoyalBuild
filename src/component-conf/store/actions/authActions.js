@@ -1,3 +1,24 @@
+export const signUp = (newUser) => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+        const firebase = getFirebase();
+        const firestore = getFirestore();
+
+        firebase.auth().createUserWithEmailAndPassword(
+            newUser.email,
+            newUser.password
+        ).then((resp) => {
+            return firestore.collection('users').doc(resp.user.uid).set({
+                nickname: newUser.nickname,
+                favoriteClass: newUser.favoriteClass,
+            })
+        }).then(() => {
+            dispatch({type: 'SIGNUP_SUCCESS'})
+        }).catch(err => {
+            dispatch({type: 'SIGNUP_ERROR', err})
+        })
+    }
+}
+
 export const signIn = (credentials) => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
@@ -13,19 +34,19 @@ export const signIn = (credentials) => {
     }
 }
 
-export const signInWithGoogle = () => {
-    return (dispatch, getState, { getFirebase }) => {
-        const firebase = getFirebase();
-        const provider = new firebase.auth.GoogleAuthProvider();
+// export const signInWithGoogle = () => {
+//     return (dispatch, getState, { getFirebase }) => {
+//         const firebase = getFirebase();
+//         const provider = new firebase.auth.GoogleAuthProvider();
        
-        firebase.auth().signInWithPopup(provider)
-        .then(() => {
-            dispatch({type: 'SIGN_IN_SUCCESS'})
-        }).catch((err) => {
-            dispatch({type: 'SIGN_IN_ERROR', err})
-        })
-    }
-}
+//         firebase.auth().signInWithPopup(provider)
+//         .then(() => {
+//             dispatch({type: 'SIGN_IN_SUCCESS'})
+//         }).catch((err) => {
+//             dispatch({type: 'SIGN_IN_ERROR', err})
+//         })
+//     }
+// }
 
 export const signOut = () => {
     return (dispatch, getState, { getFirebase }) => {
@@ -37,27 +58,6 @@ export const signOut = () => {
     }
 }
 
-export const signUp = (newUser) => {
-    return (dispatch, getState, { getFirebase, getFirestore }) => {
-        const firebase = getFirebase();
-        const firestore = getFirestore();
-
-        firebase.auth().createUserWithEmailAndPassword(
-            newUser.email,
-            newUser.password
-        ).then((resp) => {
-            return firestore.collection('users').doc(resp.user.uid).set({
-                firstName: newUser.firstName,
-                lastName: newUser.lastName,
-                email: newUser.email,                
-            })
-        }).then(() => {
-            dispatch({type: 'SIGNUP_SUCCESS'})
-        }).catch(err => {
-            dispatch({type: 'SIGNUP_ERROR', err})
-        })
-    }
-}
 
 export const deleteUser = (userId) => {
     return (dispatch, getState, { getFirebase, getFirestore })  => {
