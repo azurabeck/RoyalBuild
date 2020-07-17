@@ -6,6 +6,7 @@ import Navbar from './component-ui/global/navbar'
 import Home from './component-pages/home'
 import SignIn from './component-pages/signin'
 import SignUp from './component-pages/signup'
+import Profile from './component-pages/profile'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
            <Route exact path='/' component={Home}></Route>
            <Route path='/signin' component={SignIn}></Route>
            <Route path='/signup' component={SignUp}></Route>
+           <Route path='/profile' component={Profile}></Route>
 
         </Switch>
     </div>

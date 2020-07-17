@@ -5,7 +5,7 @@ body {
     margin: 0 auto;
 }
 
-// BUTTONS 
+// #region BUTTONS 
 .btn-green {
     display: flex;
     align-items: center;
@@ -27,10 +27,9 @@ body {
     background-color: #497d10;
 }
 .nav-btn:hover { cursor: pointer; color: #FF8A00; }
+// #endregion
 
-
-// FORMS
-
+// #region FORMS
 input , select { 
     width: 210px;
     height: 28px;
@@ -47,9 +46,9 @@ input , select {
  }
 
 select { width: 100%; }
+// #endregion
 
-// GLOBAL ESTRUCTURE
-
+// #region GLOBAL ESTRUCTURE
 .pop {
     position: fixed;
     top: 0; right: 0; left: 0; bottom: 0;
@@ -86,3 +85,15 @@ select { width: 100%; }
         color: #923030;
     }
 }
+
+// #endregion
+
+// #region ERRORS
+.text-err {
+    color: #FF8A00;
+    text-align: right;
+    font-size: 11px;
+    width: 100%;
+}
+
+// #endregion

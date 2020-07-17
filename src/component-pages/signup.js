@@ -14,7 +14,8 @@ class signup extends Component {
         password: '',
         match:'',
         nickname: '',
-        favoriteClass:''
+        favoriteClass:'',
+        matchError: false
   
     }
 
@@ -24,16 +25,20 @@ class signup extends Component {
     
       handleSubmit = (e) => {
         e.preventDefault();
-        this.props.signUp(this.state)
+
+        const { password , match } = this.state
+        if ( password === match ) {
+            this.props.signUp(this.state)
+        } else {
+            this.setState({matchError: true}) 
+        }        
     }
 
     render() {
 
+        const { matchError } = this.state
         const { auth , authError} = this.props
-        if(auth.uid) { return <Redirect to='/' /> }
-
-        console.log(auth)
-        console.log(authError)
+        if(auth.uid) { return <Redirect to='/profile' /> }
 
         return (
             <div className='pop'>
@@ -46,7 +51,7 @@ class signup extends Component {
                                 <div> <input type='text' id='nickname' placeholder='nickname'  onChange={this.handleChange}/></div>
                                 <div> <select name='class' id='favoriteClass' onChange={this.handleChange}>
                                         <option disabled selected value> -- select a favorite class -- </option>
-                                        <option value='warior'>Warior</option>
+                                        <option value='warrior'>Warrior</option>
                                         <option value='hunter'>Hunter</option>
                                         <option value='tank'>Tank</option>
                                         <option value='assassin'>Assassin</option>
@@ -59,7 +64,8 @@ class signup extends Component {
                                 <div> <input type='password' id='match' placeholder='repeat password'  onChange={this.handleChange}/></div>
                                 <div className='entering-btn'>
                                     <Send type='button' buttonType='submit' text='Enter'/>
-                                    <div className='text-red'> { authError ? <p>{authError}</p> : null } </div>
+                                    { authError ? <div className='text-red'> {authError} </div> : null } 
+                                    { matchError ? <div className='text-err'>Password should match</div> : null }
                                 </div>                                
                             </form>
 
