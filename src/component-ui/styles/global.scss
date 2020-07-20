@@ -5,6 +5,12 @@ body {
     margin: 0 auto;
 }
 
+.content {    
+    position: absolute;
+    left: 0; top: 41px; 
+    right: 0; bottom: 0;
+}
+
 // #region BUTTONS 
 .btn-green {
     display: flex;
