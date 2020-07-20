@@ -2,14 +2,15 @@
 @import './global-resp';
 
 // MOBILE IMPORTS
-@import './mobile/navbar.scss';
 @import './mobile/home.scss';
-@import './mobile/signin.scss';
 @import './mobile/menu.scss';
+@import './mobile/navbar.scss';
+@import './mobile/profile.scss';
+@import './mobile/signin.scss';
 
 
 // WEB IMPORTS
-@import './web/navbar.scss';
 @import './web/home.scss';
-@import './web/signin.scss';
 @import './web/menu.scss';
+@import './web/navbar.scss';
+@import './web/signin.scss';

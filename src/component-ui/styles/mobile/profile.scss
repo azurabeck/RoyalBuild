@@ -1,0 +1,68 @@
+.profile {
+    .profile-header {
+        position: relative;
+        margin: 0 15px;
+        background: #1B1D27;
+        height: 170px;
+        padding: 15px;
+
+        .user {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            margin-left: 5px;
+
+            .user-img { margin-right: 15px; }
+            .user-text {
+                font-family: Roboto;
+                color: #FF8A00;
+
+                .title {                    
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 13px;
+                    line-height: 15px;
+                    letter-spacing: 0.005em;
+                }
+                .desc {
+                    font-style: italic;
+                    font-weight: 300;
+                    font-size: 11px;
+                    line-height: 13px;
+                    letter-spacing: 0.005em;
+                }
+            }            
+        }
+        .history {
+            display: flex;
+            text-align: center;
+            position: absolute;
+            right: 15px; left: 15px;        
+            bottom: 30px;    
+
+            .history-info { 
+                width: 100%;
+
+                .title {
+                    font-family: Roboto;
+                    font-style: italic;
+                    font-weight: 300;
+                    font-size: 11px;
+                    line-height: 13px;
+                    letter-spacing: 0.005em;
+                    color: #000000;
+                }
+
+                .desc {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 36px;
+                    line-height: 42px;
+                    letter-spacing: 0.005em;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}
