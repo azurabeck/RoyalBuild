@@ -1,0 +1,94 @@
+.add-champ {
+
+    text-align: center;
+    margin: 0 auto;
+
+    .add-champ-header {        
+        font-family: Roboto;
+        color: #FF8A00; 
+        font-style: normal;
+        font-size: 13px;
+        margin: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+     }
+
+     .entering-btn {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        bottom: 25px;
+    }
+
+    input , select { display: block; margin: 4px auto; }
+
+    .clear { 
+        font-size: 13px;
+        font-style: italic;
+        color: #923030;
+        margin: 0 auto;
+        margin-top: 0px;
+        background: #1d1f29;
+        margin-bottom: 10px;
+        width: 220px;
+        border-radius: 2px;
+    }
+
+    .clear:hover { cursor: pointer; background-color: #16171d; }
+
+    .card-preview {        
+        background: #1B1D27;
+        height: 170px;
+        padding: 15px;
+        margin-top: 35px;
+        margin-bottom: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .champ-image {   
+            display: block;
+            background: #454548;
+            width: 55px;
+            height: 55px;
+            border-radius: 7px;
+            box-shadow: 3px 4px 37px #101010;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .champ-details {
+            text-align: left;
+            margin-left: 25px;
+            
+            .champ-name { color: #FF8A00; font-weight: 500; font-size: 14px; }
+            .champ-class { color: #79626a; font-style: italic; font-size: 11px; }
+
+            ul {
+                display: inline-flex;
+                margin-bottom: 0;
+                padding: 0;
+                list-style: none;
+
+                li {
+                    margin-right: 10px;
+                    img {     
+                        display: block;
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                        background-color: #454548; 
+                    }
+                }
+            }
+        }
+    }
+ 
+    .btn-green {
+        width: 220px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
