@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import Send from '../component-ui/global/buttonGreen'
+import { connect } from 'react-redux';
+import { createChamp } from '../component-conf/store/actions/champActions'
+import Send from '../component-ui/global/buttonGreen';
 
 class addchamp extends Component {
 
     state = {
         image: '',
-        skill1: '',
-        skill2: '',
-        skill3: '',
+        skill1: null,
+        skill2: null,
+        skill3: null,
         champClass: '',
-        name: ''
+        name: '',
     }
 
     handleChange = (e) => {
@@ -19,6 +20,11 @@ class addchamp extends Component {
 
     cleanField = (e) => {
         this.setState({ [e.target.id]: '' })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.createChamp(this.state)
     }
 
     
@@ -32,7 +38,7 @@ class addchamp extends Component {
 
                 <div className='add-champ-header'>Add Champ</div>
 
-                <form>
+                <form onSubmit={this.handleSubmit}>
 
                     <input type='text' id='name' onChange={this.handleChange} placeholder='insert champ name'/>
 
@@ -102,7 +108,8 @@ const mapStateToProps = (state) => {
     }
 }
 const mapDispatchToProps = (dispatch) => {
-    return {
+    return {    
+      createChamp: (champ) => dispatch(createChamp(champ)),
     }
 }
-export default connect(mapStateToProps, null)(addchamp)
+export default connect(mapStateToProps, mapDispatchToProps)(addchamp)
