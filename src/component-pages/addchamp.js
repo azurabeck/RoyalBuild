@@ -6,12 +6,12 @@ import Send from '../component-ui/global/buttonGreen';
 class addchamp extends Component {
 
     state = {
-        image: '',
+        champClass: '',
+        champName: '',
+        champImage: '',
         skill1: null,
         skill2: null,
         skill3: null,
-        champClass: '',
-        name: '',
     }
 
     handleChange = (e) => {
@@ -30,7 +30,7 @@ class addchamp extends Component {
     
     render() {
         
-        const { image , skill1 , skill2 , skill3 , skill4 ,champClass , name } = this.state
+        const { champImage , skill1 , skill2 , skill3 , skill4 ,champClass , champName } = this.state
         const { auth , authError} = this.props
 
         return (
@@ -40,12 +40,11 @@ class addchamp extends Component {
 
                 <form onSubmit={this.handleSubmit}>
 
-                    <input type='text' id='name' onChange={this.handleChange} placeholder='insert champ name'/>
+                    <input type='text' id='champName' onChange={this.handleChange} placeholder='insert champ name'/>
 
                     <input 
-                        type='text' id='image' placeholder='insert img url'
-                        onChange={this.handleChange} value={this.state.image}/> 
-                    <div className='clear' id='image' onClick={this.cleanField}>X</div>
+                        type='text' id='champImage' placeholder='insert img url' onChange={this.handleChange} value={champImage}/> 
+                    <div className='clear' id='champImage' onClick={this.cleanField}>X</div>
 
 
                     <select name='class' id='champClass' onChange={this.handleChange} style={{width: '220px'}}>
@@ -60,37 +59,35 @@ class addchamp extends Component {
 
                     <input 
                         type='text' id='image' placeholder='insert img skill q/1'
-                        onChange={this.handleChange} value={this.state.skill1}/> 
+                        onChange={this.handleChange} value={skill1}/> 
                     <input 
                         type='text' id='image' placeholder='insert img skill w/2'
-                        onChange={this.handleChange} value={this.state.skill2}/> 
+                        onChange={this.handleChange} value={skill2}/> 
                     <input 
                         type='text' id='image' placeholder='insert img skill e/3'
-                        onChange={this.handleChange} value={this.state.skill3}/> 
+                        onChange={this.handleChange} value={skill3}/> 
                     <input 
                         type='text' id='image' placeholder='insert img skill r/4'
-                        onChange={this.handleChange} value={this.state.skill4}/> 
+                        onChange={this.handleChange} value={skill4}/> 
                     
 
 
                     <div className='card-preview'>
 
-                        <img className='champ-image' src={image ? image : null} /> 
+                        <img className='champ-image' src={champImage}  alt=''/> 
                         <div className='champ-details'>
-                            <div className='champ-name'>{name ? name : null} / <span className='champ-class'>{champClass ? champClass : null} <img alt=''/></span></div>                           
+                            <div className='champ-name'>{champName ? champName : null} / <span className='champ-class'>{champClass ? champClass : null} <img alt=''/></span></div>                           
 
                             <ul>
-                                <li><img alt=''/></li>
-                                <li><img alt=''/></li>
-                                <li><img alt=''/></li>
-                                <li><img alt=''/></li>
+                                <li><img src={skill1 ? skill1 : null} alt=''/></li>
+                                <li><img src={skill2 ? skill2 : null} alt=''/></li>
+                                <li><img src={skill3 ? skill3 : null} alt=''/></li>
+                                <li><img src={skill4 ? skill4 : null} alt=''/></li>
                             </ul>
                         </div>
 
-
                     </div>
                     
-
                     <div className='entering-btn'>
                         <Send type='button' buttonType='submit' text='Enter'/>
                         { authError ? <div className='text-red'> {authError} </div> : null } 
