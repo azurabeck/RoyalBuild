@@ -29,11 +29,11 @@ class categories extends Component {
         let isChecked = e.target.checked;
         this.setState({[e.target.id]: isChecked})
     }
-
+    
     render() {
     
         const { warrior , hunter , mage , tank , healer , assassin } = this.state
-    
+            
         return (
             <ul className='cat-btn'>
                 <li>

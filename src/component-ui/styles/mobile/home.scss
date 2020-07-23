@@ -36,10 +36,27 @@
             justify-content: center;
             align-items: center;
         }
-        label:hover {
+        .champ-label:hover {
             cursor: pointer;
             background-color: #2d2d2d;
         }
 
      }
+}
+
+.champs-img {
+    margin: 15px auto;
+    text-align: center;
+
+    div { 
+        margin: 3px 5px;
+        width: 55px;
+        height: 55px;
+        display: inline-table; 
+
+        input { display: none; }
+        label { opacity: 23%; }
+        label:hover { cursor: pointer; opacity: 70%; }
+        input[type=checkbox]:checked + label { opacity: 100%; }
+    }
 }
