@@ -29,18 +29,16 @@ class categories extends Component {
     handleChange(e) {
         let isChecked = e.target.checked;
         this.setState({[e.target.id]: isChecked})
-    }
-
-    getFilter(e) {
         this.props.getFilterCategory(this.state)
     }
+
     
     render() {
     
         const { warrior , hunter , mage , tank , healer , assassin } = this.state
 
         return (
-            <ul className='cat-btn' onClick={e => this.getFilter(e)}>
+            <ul className='cat-btn' >
                 <li>
                     <input type="checkbox" defaultChecked={warrior} id="warrior" onChange={e => this.handleChange(e)} value="warrior" />                         
                     <label htmlFor="warrior"><img alt='' src={ warrior ? WarIconOran : WarIcon } /></label>  
@@ -69,15 +67,10 @@ class categories extends Component {
         );
     }
 }
-const mapStateToProps = (state) => {
-    return {
-        categories: state.filter
-    }
-}
 
 const mapDispatchToProps = (dispatch) => {
     return {
         getFilterCategory: (categories) => dispatch(getFilterCategory(categories))
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(categories)
+export default connect(null, mapDispatchToProps)(categories)
