@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { getFilterCategory } from '../../component-conf/store/actions/filtersActions';
 
 import WarIcon from '../images/icons/war-icon.png'
 import HunIcon from '../images/icons/hun-icon.png'
@@ -29,13 +30,17 @@ class categories extends Component {
         let isChecked = e.target.checked;
         this.setState({[e.target.id]: isChecked})
     }
+
+    getFilter(e) {
+        this.props.getFilterCategory(this.state)
+    }
     
     render() {
     
         const { warrior , hunter , mage , tank , healer , assassin } = this.state
-            
+
         return (
-            <ul className='cat-btn'>
+            <ul className='cat-btn' onClick={e => this.getFilter(e)}>
                 <li>
                     <input type="checkbox" defaultChecked={warrior} id="warrior" onChange={e => this.handleChange(e)} value="warrior" />                         
                     <label htmlFor="warrior"><img alt='' src={ warrior ? WarIconOran : WarIcon } /></label>  
@@ -64,5 +69,15 @@ class categories extends Component {
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        categories: state.filter
+    }
+}
 
-export default categories;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getFilterCategory: (categories) => dispatch(getFilterCategory(categories))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(categories)
